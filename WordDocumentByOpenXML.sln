@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29025.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordDocumentByOpenXML", "WordDocumentByOpenXML\WordDocumentByOpenXML.csproj", "{29177B5B-6BC3-4611-97C9-A91A463047BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordDocumentByOpenXML", "WordDocumentByOpenXML\WordDocumentByOpenXML.csproj", "{29177B5B-6BC3-4611-97C9-A91A463047BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebWordExport", "WebWordExport\WebWordExport.csproj", "{47D30F37-8291-4BC5-BE17-08B372FF59ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{29177B5B-6BC3-4611-97C9-A91A463047BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29177B5B-6BC3-4611-97C9-A91A463047BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29177B5B-6BC3-4611-97C9-A91A463047BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47D30F37-8291-4BC5-BE17-08B372FF59ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47D30F37-8291-4BC5-BE17-08B372FF59ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47D30F37-8291-4BC5-BE17-08B372FF59ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47D30F37-8291-4BC5-BE17-08B372FF59ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
