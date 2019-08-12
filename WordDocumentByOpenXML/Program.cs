@@ -24,7 +24,7 @@ namespace WordDocumentByOpenXML
     /// 
     /// 
     /// </summary>
-    class Program
+    public class Program
     {
         const string templateFileName = "Template.dotx";
         const string docFileNameWTemplate = "ExportedBasedOnTemplate.docx";
@@ -56,21 +56,38 @@ namespace WordDocumentByOpenXML
         static void Main(string[] args)
         {
             CreateWordDocPlain(docFileName);
-            CreateWordDocBasedOnTemplate(templateFileName, docFileNameWTemplate);
-             Console.WriteLine("");
+            //CreateWordDocBasedOnTemplate(templateFileName, docFileNameWTemplate);
+            Console.WriteLine("");
         }
 
-        private static void CreateWordDocPlain(string docFileName)
+        public static void CreateWordDocPlain(string docFileName)
         {
-            using (var wordDocument = WordprocessingDocument.Create(docFileName, WordprocessingDocumentType.Document)) {
+            using (var document = WordprocessingDocument.Create(docFileName, WordprocessingDocumentType.Document))
+            {
+                MainDocumentPart main = document.AddMainDocumentPart();
+                main.Document = new Document();
+                Body body = main.Document.AppendChild(new Body());
+
+                //add text
+                Paragraph p = body.AppendChild(new Paragraph());
+                Run r = p.AppendChild(new Run());
+                r.AppendChild(new Text("This the demo text in our demo document."));
+                r.AppendChild(new Break());
+
+                document.Close();
             }
-
-
         }
 
-        private static void CreateWordDocBasedOnTemplate(string templateFileName, string docFileNameWTemplate)
+        public static void CreateWordDocBasedOnTemplate(string templateFileName, string docFileNameWTemplate)
         {
-            throw new NotImplementedException();
+            using (var document = WordprocessingDocument.Create(docFileName, WordprocessingDocumentType.Document))
+            {
+                var body = document.MainDocumentPart.Document.Body;
+                var paragraphs = body.Elements<Paragraph>();
+                var text = paragraphs.SelectMany(p => p.Elements<Run>())
+                    .SelectMany(r => r.Elements<Text>());
+
+            }
         }
     }
 }
