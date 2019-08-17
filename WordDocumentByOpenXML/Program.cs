@@ -21,6 +21,7 @@ namespace WordDocumentByOpenXML
     /// Serge Klokov 2019
     /// 
     /// URL below are used:
+    /// https://stackoverflow.com/questions/57531762/how-to-convert-word-document-created-from-template-by-openxml-into-memorystream/57532216
     /// 
     /// 
     /// </summary>
@@ -125,6 +126,9 @@ namespace WordDocumentByOpenXML
         /// Trick is to open template for editing, 
         /// then change type to the document
         /// Open method have returned stream
+        /// 
+        /// answer on 
+        /// https://stackoverflow.com/questions/57531762/how-to-convert-word-document-created-from-template-by-openxml-into-memorystream/57532216
         /// </summary>
         /// <returns></returns>
         public static MemoryStream GetWordDocumentStreamFromTemplate()
